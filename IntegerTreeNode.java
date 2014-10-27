@@ -82,8 +82,57 @@ public class IntegerTreeNode {
         }
     }
     
+    
+    // 1. 
+    // closing brackets
+    // 2. 
+    // public X myMethod() {
+    //    X result = ...;
+    //    ...
+    //    return result;
+    //  }
+    
     public String toString() {
-        
+        String treeDisplay = "[" + this.getValue();
+        if (this.left == null && this.right == null) {
+            
+            return treeDisplay;
+        }
+        else {
+            if (this.left != null) {
+                treeDisplay += "L [" + this.left.toString() + "]";
+            }
+            if (this.right != null) {
+                treeDisplay += "R [" + this.right.toString() + "]";
+            }
+        }
+        return treeDisplay + "]";
+    }
+    
+    public int getDepth() {
+        if (this.left == null && this.right == null) {
+            return 1;
+        }
+        else {
+            int leftDepth = 0;
+            int rightDepth = 0;
+            if (this.left != null && this.right == null) {
+                leftDepth = this.left.getDepth() + 1;
+            }
+            if (this.left == null && this.right != null) {
+                rightDepth = this.right.getDepth() + 1;
+            }
+            if (this.left != null && this.right != null) {
+                leftDepth = this.left.getDepth() + 1;
+                rightDepth = this.right.getDepth() + 1;
+            }
+            if (leftDepth > rightDepth) {
+                return leftDepth;
+            }
+            else {
+                return rightDepth;
+            }
+        }
     }
     
     
