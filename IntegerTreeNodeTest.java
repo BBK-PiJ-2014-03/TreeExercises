@@ -3,12 +3,13 @@ public class IntegerTreeNodeTest {
         
         IntegerTreeNode treeRoot = new IntegerTreeNode(6);
         
-        /* treeRoot.add(7);
-        treeRoot.add(4);
-        treeRoot.add(10);
+        treeRoot.add(9);
+        treeRoot.add(5);
+        treeRoot.add(3);
         
-        treeRoot.add(104);
-        treeRoot.add(1); */
+        treeRoot.add(8);
+        treeRoot.add(11);
+        treeRoot.add(12);
         
         
         /* System.out.println(treeRoot.getMin());

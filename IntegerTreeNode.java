@@ -94,19 +94,23 @@ public class IntegerTreeNode {
     
     public String toString() {
         String treeDisplay = "[" + this.getValue();
+        
+        if (this.left == null) {
+            treeDisplay += " L[]";
+        }
+        if (this.left != null) {
+            treeDisplay += " L[" + this.left.toString() + "]";
+        }
+        if (this.right == null) {
+            treeDisplay += " R[]";
+        }
+        if (this.right != null) {
+            treeDisplay += " R[" + this.right.toString() + "]";
+        }
         if (this.left == null && this.right == null) {
-            
-            return treeDisplay;
+            treeDisplay += "]";
         }
-        else {
-            if (this.left != null) {
-                treeDisplay += "L [" + this.left.toString() + "]";
-            }
-            if (this.right != null) {
-                treeDisplay += "R [" + this.right.toString() + "]";
-            }
-        }
-        return treeDisplay + "]";
+        return treeDisplay;
     }
     
     public int getDepth() {
